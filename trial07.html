@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trial 6: Horizontal Colorful Boxes</title>
+    <title>Trial 7: Vertical Aligning</title>
     <style>
 
         body {
@@ -13,48 +13,95 @@
             margin: 0px;
         }
 
+        /*FLOAT OVERRIDES VERTICAL ALLIGN
         div {
             float: left;
         }
+*/
+        h1 {
+            font-family: sans-serif;
+            font-style: bold;
+            margin-left: 10px;
+        }
 
-        .box-class {
-            width: 100px;
+        .background-box {
+            width: 600px;
+            height: 130px;
+
+            background-color: #555555;
+
+            margin: 10px 10px 0px;
+
+        }
+
+        .foreground-box {
+            background-color: #cccccc;
+            display: inline-block;
+            margin-left: 6px;
+            margin-top: 6px;
+        }
+
+        #top-box .foreground-box {
+            float: left;
+            width: 32%;
+            height: 118px;
+        }
+
+        #middle-box .foreground-box {
+            width: 23.75%;
+            float: left;
+        }
+
+
+        #middle-box .big-box {
             height: 100px;
-            display: inline-block;
-            background-color: black;
-            margin-left:50px;
-/*            margin-right:10px;*/
-            margin-top:50px;
-
 
         }
 
-        .color-box {
-            width: 350px;
-            height: 200px;
-            display: inline-block;
-            margin:0px;
+        #middle-box .small-box {
+            height: 75px;
         }
 
-        #div1 {
-            background-color: red;
-
+        #bottom-box > * {
+            vertical-align: bottom;
         }
 
-        #div2 {
-            background-color: blue;
+        #bottom-box .foreground-box {
+            width: 48.5%;
+        }
+
+        #box1 {
+            height: 35px;
+        }
+
+        #box2 {
+            height: 118px;
+            margin-left: 2px;
         }
 
     </style>
 </head>
 <body>
-    <div id ="div1" class="color-box">
-        <div class="box-class"> </div>
-        <div class="box-class"> </div>
+    <h1>
+        AAAAAHHHHHH
+    </h1>
+
+    <div id="top-box" class="background-box">
+        <div class="foreground-box"></div>
+        <div class="foreground-box"></div>
+        <div class="foreground-box"></div>
     </div>
-    <div id ="div2" class="color-box">
-        <div class="box-class"> </div>
-        <div class="box-class"> </div>
+    <div id="middle-box" class="background-box">
+        <div class="foreground-box big-box"></div>
+        <div class="foreground-box small-box"></div>
+        <div class="foreground-box big-box"></div>
+        <div class="foreground-box small-box"></div>
     </div>
+    <div id="bottom-box" class="background-box">
+        <div id="box1" class="foreground-box"></div>
+        <div id="box2" class="foreground-box"></div>
+    </div>
+
+
 </body>
 </html>
